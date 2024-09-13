@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@28,400,0,0" />
+    <link rel="shortcut icon" href="../img/allen-vision.jpeg" type="image/x-icon">
+    <link rel="stylesheet" href="../css/cameras.css">
+    <title>Allen Vision</title>
+</head>
+<body>
+    <header>
+        <div class="logo-3bar">
+            <p>Allen Vision</p>
+            <span class="material-symbols-outlined" id="menu-toggle">
+                menu
+            </span>
+        </div>
+        <nav class="nav-header">
+            <div id="email-div">
+                <span class="material-symbols-outlined">
+                    account_circle
+                </span>
+                <p>victorrfs@gmail.com</p>
+                <span class="material-symbols-outlined">
+                    arrow_drop_down
+                </span>
+            </div>
+            <div class="lang-div">
+                <span class="material-symbols-outlined">
+                    language
+                </span>
+                <span class="material-symbols-outlined">
+                    arrow_drop_down
+                </span>
+            </div>
+            <div class="logout">
+                <span class="material-symbols-outlined">
+                    logout
+                </span>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <div class="nav-bar-left">
+            <div class="option" id="active">
+                <span class="material-symbols-outlined">
+                    speed_camera
+                </span>
+                <p>Camera</p>
+            </div>
+            <div class="option">
+                <span class="material-symbols-outlined">
+                    notifications
+                </span>
+                <p>Events</p>
+            </div>
+            <div class="option">
+                <span class="material-symbols-outlined">
+                    map
+                </span>
+                <p>On map</p>
+            </div>
+            <div class="option">
+                <span class="material-symbols-outlined">
+                    export_notes
+                </span>
+                <p>Export archive</p>
+            </div>
+            <div class="option">
+                <span class="material-symbols-outlined">
+                    settings
+                </span>
+                <p>Settings</p>
+            </div>
+        </div>
+        <div class="nav-bar-right" id="nav-bar-right">
+            <div class="search-bar">
+                <form>
+                    <input type="text" placeholder="Search" name="search" id="search">
+                    <span class="material-symbols-outlined">
+                        search
+                    </span>
+                </form>
+            </div>
+            <div class="bar-right-body">
+                <div id="my-group" class="group">
+                    <div class="group-header toggle-header">
+                        <div>
+                            <span class="material-symbols-outlined toggle-arrow">
+                                arrow_right
+                            </span>
+                            <h3>My group</h3>
+                        </div>
+                        <span class="material-symbols-outlined">
+                            edit
+                        </span>
+                    </div>
+                    <div class="group-div collapsible-content">
+                        <ul id="my-group-ul">
+                            <li class="my-group-li">
+                                <div class="group-toggle">
+                                    <div>
+                                        <span class="material-symbols-outlined toggle-arrow">
+                                            arrow_right
+                                        </span>
+                                        <p>Group 1</p>
+                                    </div>
+                                    <span class="material-symbols-outlined">
+                                        group
+                                    </span>
+                                </div>
+                                <ul class="group-camera-ul">
+                                    <li>
+                                        <span class="status-dot green"></span>
+                                        <p>Camera 1</p>
+                                    </li>
+                                    <li>
+                                        <span class="status-dot green"></span>
+                                        <p>Camera 2</p>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="my-group-li">
+                                <div class="group-toggle">
+                                    <div>
+                                        <span class="material-symbols-outlined toggle-arrow">
+                                            arrow_right
+                                        </span>
+                                        <p>Group 2</p>
+                                    </div>
+                                    <span class="material-symbols-outlined">
+                                        group
+                                    </span>
+                                </div>
+                                <ul class="group-camera-ul">
+                                    <li>
+                                        <span class="status-dot green"></span>
+                                        <p>Camera 1</p>
+                                    </li>
+                                    <li>
+                                        <span class="status-dot green"></span>
+                                        <p>Camera 2</p>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div id="shared-with-me" class="group">
+                    <div class="group-header toggle-header">
+                        <div>
+                            <span class="material-symbols-outlined toggle-arrow">
+                                arrow_right
+                            </span>
+                            <h3>Shared with me</h3>
+                        </div>     
+                    </div> 
+                    <div class="group-div collapsible-content">
+                        <ul id="shared-with-me-ul">
+                            <li class="shared-with-me-li">
+                                <span class="status-dot green"></span>
+                                <p>Shared Camera 1</p>
+                            </li>
+                            <li class="shared-with-me-li">
+                                <span class="status-dot green"></span>
+                                <p>Shared Camera 2</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="bar-right-footer">
+                <p>Add new camera or DVR</p>
+                <span class="material-symbols-outlined">
+                    add
+                </span>
+            </div>
+        </div>
+        <section class="cameras-content" id="cameras-content">
+            <div class="content-header">
+                <div class="header-first">
+                    <h2>Group</h2>
+                    <span>CAMERAS</span>
+                </div>
+                <div class="header-second">
+                    <div class="second-block" id="active-second-block">
+                        <span class="material-symbols-outlined">
+                            account_tree
+                        </span>
+                        <p>GROUPS</p>
+                    </div>
+                    <div class="second-block">
+                        <span class="material-symbols-outlined">
+                            window
+                        </span>
+                        <p>LAYOUTS</p>
+                    </div>
+                    <div class="second-block">
+                        <span class="material-symbols-outlined">
+                            dns
+                            </span>
+                        <p>HARDWARE</p>
+                    </div>
+                </div>
+            </div>
+            <div class="content-body">
+                <div class="content-group-camera">
+                    <div class="content-group-header">
+                        <div id="content-my-group">
+                            <span class="material-symbols-outlined toggle-arrow">
+                                arrow_drop_down
+                            </span>
+                            <h3>My group</h3>
+                        </div>
+                        <div id="view-type">
+                            <p>VIEW:</p>
+                            <button id="active-view">Full</button>
+                            <button>Compat</button>
+                            <span class="material-symbols-outlined">
+                                window
+                            </span>
+                            <span class="material-symbols-outlined" id="active-grid-group">
+                                grid_on
+                            </span>
+                            <span class="material-symbols-outlined">
+                                background_grid_small
+                            </span>
+                            <span class="material-symbols-outlined">
+                                background_grid_small
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="../js/colapse.js"></script>
+</body>
+</html>
