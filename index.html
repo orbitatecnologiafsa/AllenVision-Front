@@ -7,11 +7,12 @@
     <title>Allen Vision</title>
     <link rel="stylesheet" href="./assets/css/index.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.all.min.js"></script>
 </head>
 <body>
     <div class="container" id="container">
         <div class="form-container sign-up-container">
-            <form action="#">
+            <form id="register-form">
                 <h1>Crie sua conta</h1>
                 <div class="social-container">
                     <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
@@ -20,22 +21,22 @@
                 </div>
                 <span>ou preencha esses campos</span>
                 <div class="infield">
-                    <input type="text" placeholder="Nome" />
+                    <input type="text" placeholder="Nome" required id="name-create"/>
                     <label></label>
                 </div>
                 <div class="infield">
-                    <input type="email" placeholder="Email" name="email"/>
+                    <input type="email" placeholder="Email" name="email" required id="email-create"/>
                     <label></label>
                 </div>
                 <div class="infield">
-                    <input type="password" placeholder="Senha" />
+                    <input type="password" placeholder="Senha" required id="password-create"/>
                     <label></label>
                 </div>
-                <button>Cadastrar-se</button>
+                <button id="signUp-btn">Cadastrar-se</button>
             </form>
         </div>
         <div class="form-container sign-in-container">
-            <form action="#">
+            <form id="login-form">
                 <h1>Entrar com</h1>
                 <div class="social-container">
                     <a href="#" class="social"><i class="fab fa-facebook-f"></i></a>
@@ -44,15 +45,15 @@
                 </div>
                 <span>ou use sua conta Allen Vision</span>
                 <div class="infield">
-                    <input type="email" placeholder="Email" name="email"/>
+                    <input type="email" placeholder="Email" name="email" id="email-login" required/>
                     <label></label>
                 </div>
                 <div class="infield">
-                    <input type="password" placeholder="Senha" />
+                    <input type="password" placeholder="Senha" required id="password-login"/>
                     <label></label>
                 </div>
                 <a href="#" class="forgot">Esqueceu a senha?</a>
-                <button onclick="window.location.href = './assets/pages/cameras.html'">Logar</button>
+                <button id="login-btn">Logar</button>
             </form>
         </div>
         <div class="overlay-container" id="overlayCon">
@@ -73,6 +74,7 @@
             <button id="overlayBtn"></button>
         </div>
     </div>
-    <script src="./assets/js/index.js"></script>
+    <script type="module" src="./assets/js/addons/alerts.js"></script>
+    <script src="./assets/js/index.js" type="module"></script>
 </body>
 </html>

@@ -18,7 +18,11 @@
     margin: 0;
     padding: 0;
     font-family: Helvetica, sans-serif;
-    font-weight: 300;
+    font-weight: 100;
+    user-select: none; /* Para navegadores modernos */
+    -webkit-user-select: none; /* Para navegadores baseados em WebKit (Chrome, Safari) */
+    -moz-user-select: none; /* Para navegadores Firefox */
+    -ms-user-select: none; /* Para navegadores Internet Explorer e Edge */
 }
 
 body {
@@ -41,10 +45,7 @@ header{
     background-color: var(--medium_blue);
     justify-content: space-between;
     align-items: center;
-    user-select: none; /* Para navegadores modernos */
-    -webkit-user-select: none; /* Para navegadores baseados em WebKit (Chrome, Safari) */
-    -moz-user-select: none; /* Para navegadores Firefox */
-    -ms-user-select: none; /* Para navegadores Internet Explorer e Edge */
+    
 }
 .logo-3bar{
     width: 20%;
@@ -56,7 +57,10 @@ header{
     align-items: center;    
     background-color: var(--light_blue);
 }
-.logo-3bar span{
+.logo-3bar img{
+    width: 70%;
+}
+.logo-3bar i{
     cursor: pointer;
 }
 .nav-header{
@@ -65,19 +69,18 @@ header{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    font-size: 1.2rem;
+    font-size: 1rem;
     color: white;
+}
+.nav-header i{
+    cursor: pointer;
+    font-size: 1.2rem;
 }
 #email-div{
     display: flex;
     gap: .5rem;
     align-items: center;
     cursor: pointer;
-}
-.fa-user{
-    border: 2px solid white;
-    border-radius: 50%;
-    padding: .3rem .4rem;
 }
 .lang-div{
     display: flex;
@@ -121,8 +124,8 @@ main{
     border-bottom: 1px solid white;
     transition: 0.3s ease-in-out;
 }
-.option span{
-    font-size: 2.7rem;
+.option i{
+    font-size: 2rem;
 }
 .option p{
     font-size: .7rem;
@@ -174,7 +177,7 @@ main{
     border-radius: 15px 0 0 15px;
     background-color: white;
 }
-.search-bar form span{
+.search-bar form i{
     width: 15%;
     height: 35%;
     border-left: none;
@@ -199,10 +202,6 @@ main{
 
 #my-group {
     margin-top: 2vh;
-    user-select: none; /* Para navegadores modernos */
-    -webkit-user-select: none; /* Para navegadores baseados em WebKit (Chrome, Safari) */
-    -moz-user-select: none; /* Para navegadores Firefox */
-    -ms-user-select: none; /* Para navegadores Internet Explorer e Edge */
 }
 
 .group {
@@ -215,7 +214,6 @@ main{
     align-items: center;
     cursor: pointer;
 }
-
 .group-header div {
     display: flex;
     align-items: center;
@@ -260,7 +258,7 @@ main{
     padding-left: 28px;
     margin-top: 0.5rem;
     gap: .3rem;
-    transition: all 0.5s ease; /* Transição suave */
+    transition: height 0.3s ease, opacity 0.3s ease; /* Transição suave */
 }
 
 .group-camera-ul li {
@@ -288,14 +286,16 @@ main{
 .rotate {
     transform: rotate(90deg); /* Gira a seta quando o grupo é fechado */
 }
-
+.rotate-right{
+    transform: rotate(-90deg);
+}
 .group-header .toggle-arrow.rotate {
     transform: rotate(90deg); /* Gira a seta quando o grupo está aberto */
 }
 
 .collapsible-content {
     display: none; /* Oculto por padrão */
-    transition: all 0.5s ease;
+    transition: height 0.3s ease, opacity 0.3s ease;
 }
 
 .collapsible-content.show {
@@ -332,8 +332,9 @@ main{
     justify-content: center;
     border-top: 1px solid var(--gray);
     gap: .3rem;
+    font-size: 0.8rem;
 }
-.bar-right-footer span{
+.bar-right-footer i{
     color: var(--light_blue);
 }
 /* camera content */ /* camera content */
@@ -365,7 +366,7 @@ main{
     justify-content: center;
     gap: 0.3rem;
 }
-.header-first span{
+.header-first i{
     color: var(--light_blue);
     font-size: 0.8rem;
     font-weight: 400;
@@ -386,7 +387,7 @@ main{
     border-left: 1px solid var(--gray);
     transition: 0.3s;
 }
-.second-block span{
+.second-block i{
     font-size: 2rem;
     color: var(--light_blue);
 }
@@ -420,13 +421,13 @@ main{
 }
 /* header div 1 */
 #content-my-group{
-    width: 35%;
+    width: 25%;
     display: flex;
     gap: 0.5rem;
     justify-content: start;
     align-items: center;
 }
-#content-my-group span{
+#content-my-group i{
     cursor: pointer;
 }
 #content-my-group h3{
@@ -435,7 +436,7 @@ main{
 
 /* header div 2 */
 #view-type{
-    width: 30%;
+    width: 45%;
     display: flex;
     gap: 0.5rem;
     align-items: center;
@@ -458,13 +459,13 @@ main{
     color: var(--white);
     background-color: var(--light_blue) !important;
 }
-#view-type span{
+#view-type i{
     color: var(--inactive-option);
     font-size: 2rem;
     cursor: pointer;
     transition: 0.3s;
 }
-#active-grid-group, #view-type span:hover{
+#active-grid-group, #view-type i:hover{
     color: var(--light_blue) !important;
 }
 
@@ -501,7 +502,7 @@ main{
     width: 100%;
     display: flex;
 }
-.content-body-my-group-header .for-span{
+.content-body-my-group-header .for-i{
     width: 5%;
     height: 100%;
     background-color: var(--light_blue);
@@ -543,7 +544,7 @@ main{
     border-left: 2px solid var(--gray);
     cursor: pointer;
 }
-.content-body-my-group-header .for-3option div span{
+.content-body-my-group-header .for-3option div i{
     font-size: 2rem;
     color: var(--light_blue);
 }
@@ -554,7 +555,13 @@ main{
     height: 60%;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
+    transition: height 0.3s ease, opacity 0.3s ease;
     gap: 1rem;
+}
+.grid-for-cams.collapsed {
+    height: 0;
+    opacity: 0;
+    padding: 0;
 }
 .camera-video{
     display: flex;
@@ -587,7 +594,7 @@ main{
 .camera-video .for-text p{
     color: var(--light_blue);
 }
-.camera-video .for-text span{
+.camera-video .for-text i{
     font-size: 1.5rem;
     color: var(--background-nav-1);
     cursor: pointer;
@@ -599,7 +606,7 @@ main{
     width: 100%;
     display: flex;
 }
-.content-body-my-group-header-2 .for-span{
+.content-body-my-group-header-2 .for-i{
     width: 5%;
     height: 100%;
     background-color: var(--group-2);
@@ -642,7 +649,7 @@ main{
     border-left: 2px solid var(--gray);
     cursor: pointer;
 }
-.content-body-my-group-header-2 .for-3option div span{
+.content-body-my-group-header-2 .for-3option div i{
     font-size: 2rem;
     color: var(--light_blue);
 }
