@@ -147,11 +147,12 @@ main{
     overflow: hidden; /* Garante que o conteúdo não transborde */
     transition: width 0.3s ease; /* Transição suave para a largura */
     white-space: nowrap; /* Garante que o conteúdo não transborde */
+    
 }
-
 /* Exibição da barra lateral */
 .nav-bar-right.open {
     width: 15vw;
+    white-space: wrap;
 }
 .search-bar{
     height: 12%;
@@ -357,7 +358,7 @@ main{
     display: flex;
 }
 .header-first{
-    width: 60%;
+    width: 90%;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -373,14 +374,14 @@ main{
 }
 .header-second{
     display: flex;
-    width: 40%;
+    width: 10%;
 }
 .second-block{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 33.3%;
+    width: 100%;
     height: 100%;
     cursor: pointer;
     gap: 0.3rem;
@@ -394,9 +395,6 @@ main{
 .second-block p{
     font-size: 0.8rem;
     text-align: center;
-}
-.second-block:hover{
-    background-color: var(--gray);
 }
 #active-second-block{
     border-bottom: 4px solid var(--light_blue);

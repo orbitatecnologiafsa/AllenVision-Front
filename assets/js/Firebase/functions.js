@@ -43,7 +43,7 @@ export function checkAuthStatus() {
   return new Promise((resolve) => {
     auth.onAuthStateChanged((user) => {
       if (user) {
-        resolve(true);
+        resolve(user.uid);
       } else {
         window.location.href = '../../index.html';
       }
@@ -54,4 +54,51 @@ export function checkAuthStatus() {
 export function logout() {
     auth.signOut();
     window.location.href = '../../index.html';
+}
+
+
+export async function criarGrupoFirebase(doc_id, grupo_nome) {
+
+    const user_db = db.collection('users').doc(doc_id).collection('grupo-camera');
+
+    await user_db.add({
+        nome: grupo_nome
+    });
+}
+export async function criarCameraFirebase(doc_id, grupo_id, camera_nome, camera_ip) {
+  
+  try {
+    const user_db = db.collection('users').doc(doc_id).collection('grupo-camera').doc(grupo_id);
+
+    const nova_camera = {
+        nome_camera: camera_nome,
+        ip: camera_ip
+    };
+    let array_camera = [nova_camera]
+
+    user_db.update({
+      cameras: firebase.firestore.FieldValue.arrayUnion(nova_camera)
+    }),{merge: true};
+
+    console.log('Câmera adicionada com sucesso!');
+    } catch (error) {
+        console.error('Erro ao adicionar a câmera:', error);
+    }
+  
+}
+export async function PreencherGrupoFirebase(doc_id) {
+
+    const user_db = db.collection('users').doc(doc_id).collection('grupo-camera');
+
+    const grupo = await user_db.get();
+
+    const grupo_data = []
+    grupo.forEach(doc =>{
+        grupo_data.push({
+          id: doc.id,  // Para incluir o ID do documento, caso você queira
+          data: doc.data()  // Adiciona os dados do documento
+        });
+    })
+
+    return grupo_data
 }
