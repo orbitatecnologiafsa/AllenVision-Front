@@ -27,5 +27,5 @@ document.getElementById('create-group').addEventListener('click', async (event) 
 
     const group_name = createGroup();
     
-    console.log(group_name)
+    console.log(group_nameww)
 });

@@ -128,7 +128,7 @@ main{
     font-size: 2rem;
 }
 .option p{
-    font-size: .7rem;
+    font-size: .6rem;
 }
 #active, .option:hover{
     background-color: var(--medium_blue);
